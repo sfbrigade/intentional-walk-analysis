@@ -53,11 +53,10 @@ iwalk_survey_raw.drop(open_ended_q, inplace = True, axis = 1)
 
 #create unique ids for the respondent id column
 
-#this list comprehension uses the uuid package to generate a random alphanumeric id of length 8
+  #this list comprehension uses the uuid package to generate a random alphanumeric id of length 8
 iwalk_survey_raw["Respondent ID"] = [str(uuid.uuid4())[:8] for row in range(len(iwalk_survey_raw))]
 
 #add a line that writes the raw data to a csv 
-
 
 iwalk_survey_raw.columns #look at remaining columns
 
@@ -224,10 +223,6 @@ def analyze_likert_with_other(df, open_ended_df):
         
         
     analyze_likert_with_other(likert_df, likert_with_open_ended_df)
-
-
-
-
 
 
 def likert_scale_analysis (df):
